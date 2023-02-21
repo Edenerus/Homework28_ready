@@ -20,7 +20,7 @@ class Ad(models.Model):
     description = models.TextField(max_length=1000, null=True)
     is_published = models.BooleanField(default=False)
     image = models.ImageField(upload_to='images/', default=None)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     class Meta:
